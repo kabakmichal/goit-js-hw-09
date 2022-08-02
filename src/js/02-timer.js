@@ -64,8 +64,8 @@ let secondsHtml = document.querySelector('[data-seconds]');
 const getDifference = () => {
     const todayTime = new Date().getTime();
     let difference = selectedDate.getTime() - todayTime;
-    console.log(convertMs(difference));
-    console.log(difference);
+    //console.log(convertMs(difference));
+    //console.log(difference);
 
     const resultDays = convertMs(difference).days;
     daysHtml.textContent = addLeadingZero(resultDays);
@@ -78,12 +78,11 @@ const getDifference = () => {
 
     const resultSeconds = convertMs(difference).seconds;
     secondsHtml.textContent = addLeadingZero(resultSeconds);
-
-    difference -= 1000;
 };
 
 let timerId = null;
 startBtn.addEventListener('click', () => {
+    getDifference();
     timerId = setInterval(() => {
         getDifference();
     }, 1000);
