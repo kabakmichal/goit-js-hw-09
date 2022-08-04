@@ -41,7 +41,7 @@ const options = {
     } else {
       startBtn.disabled = false;
       //console.log(selectedDates[0]);//
-      return (selectedDate = selectedDates[0]);
+      return selectedDate = selectedDates[0];
     }
   },
 };
@@ -69,8 +69,8 @@ const getDifference = () => {
   const difference = selectedDate.getTime() - todayTime;
   //console.log(convertMs(difference));//
   //console.log(difference);//
-  if (difference <= 0) {
-    return 0;
+  if (difference < 1000) {
+    clearInterval(timerId);
   }
   const resultDays = convertMs(difference).days;
   daysHtml.textContent = addLeadingZero(resultDays);
