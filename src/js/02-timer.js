@@ -47,7 +47,6 @@ const options = {
 };
 
 flatpickr('#datetime-picker', options);
-
 function addLeadingZero(value) {
   if (value < 10) {
     return value.toString().padStart(2, '0');
